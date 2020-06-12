@@ -1,0 +1,299 @@
+[
+    {
+        "id": "c57486a.fd79178",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3da8faca.a3c4d6",
+        "type": "ui_worldmap",
+        "z": "c57486a.fd79178",
+        "group": "97cb0ed1.0098d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "lat": "-0.174842",
+        "lon": "-78.4969",
+        "zoom": "12",
+        "layer": "",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "true",
+        "zoomlock": "true",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "path": "/worldmap",
+        "x": 960,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ed502f06.c9dcd",
+        "type": "ui_button",
+        "z": "c57486a.fd79178",
+        "name": "",
+        "group": "81a34742.2e4788",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LABRADOR",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "labrador",
+        "payloadType": "str",
+        "topic": "",
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "6e9f6b6e.95e434"
+            ]
+        ]
+    },
+    {
+        "id": "1a54a6c0.7878f9",
+        "type": "ui_button",
+        "z": "c57486a.fd79178",
+        "name": "",
+        "group": "81a34742.2e4788",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "COLON",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "colon",
+        "payloadType": "str",
+        "topic": "",
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "6e9f6b6e.95e434"
+            ]
+        ]
+    },
+    {
+        "id": "89fbb8ef.516578",
+        "type": "ui_button",
+        "z": "c57486a.fd79178",
+        "name": "",
+        "group": "81a34742.2e4788",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "RECREO",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "recreo",
+        "payloadType": "str",
+        "topic": "",
+        "x": 560,
+        "y": 280,
+        "wires": [
+            [
+                "6e9f6b6e.95e434"
+            ]
+        ]
+    },
+    {
+        "id": "8e191370.7bcfd",
+        "type": "ui_button",
+        "z": "c57486a.fd79178",
+        "name": "",
+        "group": "81a34742.2e4788",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "CARCELEN",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "carcelen",
+        "payloadType": "str",
+        "topic": "",
+        "x": 570,
+        "y": 160,
+        "wires": [
+            [
+                "6e9f6b6e.95e434"
+            ]
+        ]
+    },
+    {
+        "id": "a879f579.ce5948",
+        "type": "ui_gauge",
+        "z": "c57486a.fd79178",
+        "name": "",
+        "group": "69e2e219.a901ec",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Num. de personas",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 990,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "75b984c7.26189c",
+        "type": "ui_chart",
+        "z": "c57486a.fd79178",
+        "name": "",
+        "group": "69e2e219.a901ec",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Historico",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "30",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 960,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e9f6b6e.95e434",
+        "type": "function",
+        "z": "c57486a.fd79178",
+        "name": "funcion",
+        "func": "var msg1 = {};\n\nif (msg.payload == \"carcelen\"){\n    msg.payload = {     \"name\": \"CARCELEN\",     \"lat\": -0.099631,     \"lon\": -78.470699,     \"icon\": \"globe\",     \"iconColor\": \"orange\" };\n    msg1.payload = Math.round(Math.random()*30);\n    msg1.topic = 'Carcelen';\n    return [msg,msg1];\n}\n\nif (msg.payload == \"labrador\"){\n    msg.payload = {     \"name\": \"LABRADOR\",     \"lat\": -0.154133,     \"lon\": -78.486855,     \"icon\": \"globe\",     \"iconColor\": \"orange\" };\n    msg1.payload = Math.round(Math.random()*30);\n    msg1.topic = 'Labrador';\n    return [msg,msg1];\n}\n\nif (msg.payload == \"colon\"){\n    msg.payload = {     \"name\": \"COLON\",     \"lat\": -0.198264,     \"lon\": -78.495921,     \"icon\": \"globe\",     \"iconColor\": \"orange\" };\n    msg1.payload = Math.round(Math.random()*30);\n    msg1.topic = 'Colon';\n    return [msg,msg1];\n}\n\nif (msg.payload == \"recreo\"){\n    msg.payload = {     \"name\": \"RECREO\",     \"lat\": -0.252395,     \"lon\": -78.521315,     \"icon\": \"globe\",     \"iconColor\": \"orange\" };\n    msg1.payload = Math.round(Math.random()*30);\n    msg1.topic = 'Recreo';\n    return [msg,msg1];\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 780,
+        "y": 220,
+        "wires": [
+            [
+                "3da8faca.a3c4d6"
+            ],
+            [
+                "a879f579.ce5948",
+                "75b984c7.26189c"
+            ]
+        ]
+    },
+    {
+        "id": "71e8d127.341a",
+        "type": "ui_button",
+        "z": "c57486a.fd79178",
+        "name": "",
+        "group": "81a34742.2e4788",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "BUS",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "{     \"name\": \"Trole\",     \"lat\": -0.163902,     \"lon\": -78.486085,     \"icon\": \"bus\",     \"iconColor\": \"blue\" }",
+        "payloadType": "json",
+        "topic": "",
+        "x": 550,
+        "y": 340,
+        "wires": [
+            [
+                "3da8faca.a3c4d6"
+            ]
+        ]
+    },
+    {
+        "id": "97cb0ed1.0098d",
+        "type": "ui_group",
+        "z": "",
+        "name": "MAPA",
+        "tab": "7ab71f27.3aef9",
+        "order": 2,
+        "disp": true,
+        "width": 10,
+        "collapse": false
+    },
+    {
+        "id": "81a34742.2e4788",
+        "type": "ui_group",
+        "z": "",
+        "name": "Paradas",
+        "tab": "7ab71f27.3aef9",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "69e2e219.a901ec",
+        "type": "ui_group",
+        "z": "",
+        "name": "Contador",
+        "tab": "7ab71f27.3aef9",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7ab71f27.3aef9",
+        "type": "ui_tab",
+        "z": "",
+        "name": "DEMODAY",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
